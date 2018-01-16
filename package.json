@@ -1,0 +1,50 @@
+{
+  "name": "dayOne",
+  "version": "0.1.0",
+  "private": true,
+  "description": "dayOne",
+  "scripts": {
+    "start": "webpack-dev-server --content-base assets/",
+    "build": "webpack",
+    "build-watch": "webpack --watch",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "flow",
+    "test-src": "jest",
+    "test": "npm run lint && npm run typecheck && npm run test-src"
+  },
+  "dependencies": {
+    "class-autobind": "^0.1.4",
+    "classnames": "^2.2.5",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.8",
+    "css-modules-require-hook": "^4.2.3",
+    "enzyme": "^3.3.0",
+    "eslint": "^4.15.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-flowtype": "^2.41.0",
+    "eslint-plugin-react": "^7.5.1",
+    "flow-bin": "^0.40.0",
+    "flow-typed": "^2.2.3",
+    "jest": "^22.1.1",
+    "raw-loader": "^0.5.1",
+    "react-addons-test-utils": "^15.6.2",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
