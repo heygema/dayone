@@ -5,12 +5,6 @@ export let genCompare = (a: mixed , b: mixed) => {
   if (typeof a === typeof b) {
     let typos = typeof a;
     switch(typeof a) {
-      // case 'string': {
-      //   return a === b;
-      // }
-      // case 'number': {
-      //   return a === b;
-      // }
       case 'object': {
         if ( Array.isArray(a) === Array.isArray(b) ) {
           if (Array.isArray(a)) {
@@ -27,7 +21,8 @@ export let genCompare = (a: mixed , b: mixed) => {
             }
           } else {
             // this is object block
-            if (a !== null && b !== null) {
+            if (a !== null) {
+              if (b !== null) {
             let keysa: Array<string> = Object.keys(a);
             let keysb: Array<string> = Object.keys(b);
             if (keysa.length !== keysb.length) {
@@ -39,6 +34,8 @@ export let genCompare = (a: mixed , b: mixed) => {
               } else { return true; }
             }
           }
+        }
+        else { return false;}
           }
             return true;
           }

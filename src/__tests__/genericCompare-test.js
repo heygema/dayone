@@ -13,6 +13,19 @@ it('should return truthy', () => {
 });
 
 it('should return truthy', () => {
+  expect(genCompare({}, null)).toEqual(false);
+});
+
+it('should return truthy', () => {
+  expect(genCompare(null, {})).toEqual(false);
+});
+
+it('should return falsy', () => {
+  expect(genCompare({null: null, undefined: null, null: undefined}, {undefined: null, null: undefined})).toEqual(true);
+});
+
+
+it('should return truthy', () => {
   expect(genCompare({}, [])).toEqual(false);
 });
 
@@ -46,4 +59,8 @@ it('should return true', () => {
 
 it('should return false', () => {
   expect(genCompare(1, null)).toEqual(false);
+});
+
+it('should return false', () => {
+  expect(genCompare(undefined, null)).toEqual(false);
 });
