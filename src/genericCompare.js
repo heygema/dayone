@@ -5,12 +5,12 @@ export let genCompare = (a: mixed , b: mixed) => {
   if (typeof a === typeof b) {
     let typos = typeof a;
     switch(typeof a) {
-      case 'string': {
-        return a === b;
-      }
-      case 'number': {
-        return a === b;
-      }
+      // case 'string': {
+      //   return a === b;
+      // }
+      // case 'number': {
+      //   return a === b;
+      // }
       case 'object': {
         if ( Array.isArray(a) === Array.isArray(b) ) {
           if (Array.isArray(a)) {
@@ -21,7 +21,7 @@ export let genCompare = (a: mixed , b: mixed) => {
                    if (genCompare(a[i], b[i]) === false) {
                      return false;
                    }
-                   else {return true}
+                   else { return true; }
                  }
               } else { return false; }
             }
