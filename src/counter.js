@@ -12,9 +12,11 @@ export let store = (something: number) => {
     val = counter.decreaseWith(num);
     return val;
   };
+
+  let getVal = () => val;
   initVal(something);
 
-  return {incWith, decWith};
+  return {getVal, incWith, decWith};
 };
 
 let counter = (nval: number = 0) => {

@@ -1,8 +1,6 @@
 // @flow
 /*eslint-disable no-unused-vars*/
 
-// let r = new RegExp('(?=S*[a-z])(?=S*[A-Z])(?=S*d)(?=S*([^ws]|[_]))S{6,}$');
-
 let checkPass = (pass: string) => {
   function checkLength() {
     return pass.length > 6;
@@ -47,12 +45,11 @@ let checkPass = (pass: string) => {
   return {
     success: success(),
     reason: reason(),
-    pass,
   };
 };
 
 export default checkPass;
 
 // rough test
-// let {success, reason} = checkPass('huamM908234');
-// console.log(success, reason);
+let {success, reason} = checkPass('hu');
+console.log(success, reason.stringType);
