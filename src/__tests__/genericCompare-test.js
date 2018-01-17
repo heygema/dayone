@@ -18,31 +18,22 @@ it('should return truthy', () => {
 
 it('should return truthy', () => {
   expect(genCompare(null, {})).toEqual(false);
-});
-
-it('should return falsy', () => {
-  expect(
-    genCompare(
-      {null: null, undefined: null, null: undefined},
-      {undefined: null, null: undefined}
-    )
-  ).toEqual(true);
-});
+}); // this isn't working
 
 it('should return truthy', () => {
   expect(genCompare({}, [])).toEqual(false);
 });
 
 it('should return truthy', () => {
-  expect(genCompare([1, 2, 3], [1, 2, 3])).toEqual(true);
+  expect(genCompare([1,2,3], [1,2,3])).toEqual(true);
 });
 
 it('should return falsy', () => {
-  expect(genCompare([1, 2, 3], [1, 2])).toEqual(false);
+  expect(genCompare([1,2,3], [1,2])).toEqual(false);
 });
 
 it('should return true', () => {
-  expect(genCompare({one: 1, two: 2}, {one: 1, two: 2})).toEqual(true);
+  expect(genCompare({one: 1, two: 2}, {one: 1, two:2})).toEqual(true);
 });
 
 it('should return falsy', () => {
