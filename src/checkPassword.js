@@ -42,7 +42,7 @@ let checkPass = (pass: string) => {
     if (checkLength() && checkUpper() && checkLower()) {
       result.push('password is okay');
     }
-    return result.join(', ');
+    return {stringType: result.join(', '), arrayType: result};
   };
   return {
     success: success(),
@@ -53,6 +53,6 @@ let checkPass = (pass: string) => {
 
 export default checkPass;
 
-let {success, reason} = checkPass('huamM908234');
-
-console.log(success, reason);
+// rough test
+// let {success, reason} = checkPass('huamM908234');
+// console.log(success, reason);
