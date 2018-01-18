@@ -1,12 +1,13 @@
 // @flow
 /*eslint-disable no-unused-vars*/
-type Data = {
-  [string]: Object,
-};
 
 type DataCriteria = {
   color: string,
   calorie: string,
+};
+
+type Data = {
+  [string]: DataCriteria,
 };
 
 type Fn = Data => string;
@@ -59,23 +60,23 @@ d.set('chocolate', chocoCriteria);
 console.log(d.data);
 console.log(d.get('banana'));
 
-function goal() {
-  return 'GOAL !';
-}
+// function goal() {
+//   return 'GOAL !';
+// }
 
 // function showLength(thing: string) {
 //   return 'the length is ' + thing.length;
 // }
 
 function showColor(thing: DataCriteria) {
-  return 'the color is ' + thing['color'];
+  let title = 'none';
+  return 'the color of ' + title + ' is ' + thing['color'];
 }
 
 // function showColorAndItem(item: string, thing: Object) {
 //   return 'the color of ' + item + 'is' + thing['color'];
 // }
 
-d.forEach(goal);
 d.forEach(showColor);
 
 export default DataStore;

@@ -18,10 +18,17 @@ it('should expect to be right', () => {
     calorie: '200kcal',
   };
 
+  let Orange = {
+    color: 'orange',
+    calorie: '90kcal',
+  };
+
   d.set('banana', bananaCriteria);
   d.set('apple', appleCriteria);
   d.set('chocolate', chocoCriteria);
+  d.set('orange', Orange);
 
   expect(true).toBe(true);
   expect(d.get('banana')).toEqual(bananaCriteria);
+  //   expect()
 });
