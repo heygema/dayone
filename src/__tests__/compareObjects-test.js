@@ -6,7 +6,7 @@ let a = {one: 1, two: 2};
 let b = {two: 2, one: 1};
 
 it('{} {} should return true', () => {
-  let result = compareObjects({},{});
+  let result = compareObjects({}, {});
   expect(result).toEqual(true);
 });
 
@@ -16,6 +16,6 @@ it('simon and john should return false', () => {
 });
 
 it('should expect true', () => {
-  let res = compareObjects(a,b);
+  let res = compareObjects(a, b);
   expect(res).toEqual(true);
 });
