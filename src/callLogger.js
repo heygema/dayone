@@ -17,12 +17,9 @@ let createCallLogger = (createDate: DateFunction = defaultTime) => {
   let getRecent = () => logs;
   console.log(typeof createDate());
   let add = (typical: 'MISSED' | 'INCOMING' | 'OUTGOING', number: string) => {
-    if (typeof number !== 'string') {
-      number = number.toString();
-    }
     let obj: Call = {
       type: typical,
-      number: number,
+      number: number.toString(),
       timestamp: createDate(),
     };
     logs.push(obj);
@@ -35,17 +32,17 @@ let createCallLogger = (createDate: DateFunction = defaultTime) => {
 let cL = createCallLogger();
 let call1 = {
   type: 'INCOMING',
-  number: 123,
+  number: '123',
 };
 
 let call2 = {
   type: 'MISSED',
-  number: 92389284,
+  number: '9232',
 };
 
 let call3 = {
   type: 'OUTGOING',
-  number: 7937593,
+  number: '343',
 };
 cL.add(call1.type, call1.number);
 cL.add(call2.type, call2.number);
