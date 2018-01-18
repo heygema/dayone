@@ -29,24 +29,4 @@ let createCallLogger = (createDate: DateFunction = defaultTime) => {
   return {getRecent, add};
 };
 
-let cL = createCallLogger();
-let call1 = {
-  type: 'INCOMING',
-  number: '123',
-};
-
-let call2 = {
-  type: 'MISSED',
-  number: '9232',
-};
-
-let call3 = {
-  type: 'OUTGOING',
-  number: '343',
-};
-cL.add(call1.type, call1.number);
-cL.add(call2.type, call2.number);
-cL.add(call3.type, call3.number);
-console.log(cL.getRecent());
-
 export default createCallLogger;

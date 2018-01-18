@@ -25,11 +25,11 @@ it('test', () => {
   expect(recentCall).toBeInstanceOf(Array);
   let recentCallFiltered = recentCall.map((call) => {
     let {type, number, timestamp} = call;
-    return {type, number, timestamp: typeof timestamp};
+    return {type, number: typeof number, timestamp: typeof timestamp};
   });
   expect(recentCallFiltered[0]).toEqual({
     type: 'INCOMING',
-    number: '123',
+    number: 'string',
     timestamp: 'string',
   });
 });
