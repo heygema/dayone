@@ -2,21 +2,26 @@ import DataStore from '../day4/DataStore';
 
 it('should expect to be right', () => {
   let d = new DataStore();
-  d.set('banana', 'enak');
-  d.set('apple', 'tidak enak');
 
-  console.log(d.data);
+  let bananaCriteria = {
+    color: 'yellow',
+    calorie: '160kcal',
+  };
 
-  function goal() {
-    return 'GOAL !';
-  }
+  let appleCriteria = {
+    color: 'red',
+    calorie: '90kcal',
+  };
 
-  function showLength(thing) {
-    return thing.length;
-  }
+  let chocoCriteria = {
+    color: 'dark',
+    calorie: '200kcal',
+  };
 
-  d.forEach(goal);
-  d.forEach(showLength);
+  d.set('banana', bananaCriteria);
+  d.set('apple', appleCriteria);
+  d.set('chocolate', chocoCriteria);
 
   expect(true).toBe(true);
+  expect(d.get('banana')).toEqual(bananaCriteria);
 });

@@ -77,3 +77,5 @@ function showColor(thing: DataCriteria) {
 
 d.forEach(goal);
 d.forEach(showColor);
+
+export default DataStore;
