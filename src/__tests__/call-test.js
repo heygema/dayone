@@ -5,7 +5,7 @@ it('test', () => {
   let cL = createCallLogger();
   let call1 = {
     type: 'INCOMING',
-    number: 92389284,
+    number: 123,
   };
 
   let call2 = {
@@ -20,6 +20,16 @@ it('test', () => {
   cL.add(call1.type, call1.number);
   cL.add(call2.type, call2.number);
   cL.add(call3.type, call3.number);
-
-  expect(cL.logs).toHaveLength(3);
+  let recentCall = cL.getRecent();
+  expect(recentCall).toHaveLength(3);
+  expect(recentCall).toBeInstanceOf(Array);
+  let recentCallFiltered = recentCall.map((call) => {
+    let {type, number, timestamp} = call;
+    return {type, number, timestamp: typeof timestamp};
+  });
+  expect(recentCallFiltered[0]).toEqual({
+    type: 'INCOMING',
+    number: '123',
+    timestamp: 'string',
+  });
 });

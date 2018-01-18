@@ -50,6 +50,6 @@ let checkPass = (pass: string) => {
 
 export default checkPass;
 
-// rough test
-let {success, reason} = checkPass('hu');
-console.log(success, reason.stringType);
+// // rough test
+// let {success, reason} = checkPass('hu');
+// console.log(success, reason.stringType);
