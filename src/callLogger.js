@@ -9,13 +9,13 @@ type Call = {
 
 type DateFunction = () => string;
 
-let createCallLogger = (
-  createDate: DateFunction = () => new Date().toISOString()
-) => {
-  let logs: Array<Object> = [];
+let defaultTime = () => new Date().toISOString();
+
+let createCallLogger = (createDate: DateFunction = defaultTime) => {
+  let logs: Array<Call> = [];
 
   let getRecent = () => logs;
-
+  console.log(typeof createDate());
   let add = (typical: 'MISSED' | 'INCOMING' | 'OUTGOING', number: string) => {
     if (typeof number !== 'string') {
       number = number.toString();
