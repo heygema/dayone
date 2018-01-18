@@ -1,23 +1,23 @@
 // @flow
 /*eslint-disable no-unused-vars*/
 
-export let store = (something: number) => {
-  let val;
-  let initVal = (num) => (val = num);
-  let incWith = (num: number) => {
-    val = counter.increaseWith(num);
-    return val;
-  };
-  let decWith = (num: number) => {
-    val = counter.decreaseWith(num);
-    return val;
-  };
+// export let store = (something: number) => {
+//   let val;
+//   let initVal = (num) => (val = num);
+//   let incWith = (num: number) => {
+//     val = counter.increaseWith(num);
+//     return val;
+//   };
+//   let decWith = (num: number) => {
+//     val = counter.decreaseWith(num);
+//     return val;
+//   };
 
-  let getVal = () => val;
-  initVal(something);
+//   let getVal = () => val;
+//   initVal(something);
 
-  return {getVal, incWith, decWith};
-};
+//   return {getVal, incWith, decWith};
+// };
 
 let counter = (nval: number = 0) => {
   let val = nval;
