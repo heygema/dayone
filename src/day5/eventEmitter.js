@@ -1,9 +1,15 @@
-class EventEmitter {
-  constructor() {
-    this.listeners = {};
-  }
+// @flow
 
-  addListener(event, fn) {
+type EmmitFunction = mixed => mixed;
+
+type ListenersType = {
+  [string]: Array<EmmitFunction>,
+};
+
+class EventEmitter {
+  listeners: ListenersType = {};
+
+  addListener(event: string, fn: EmmitFunction) {
     if (this.listeners[event]) {
       this.listeners[event] = [...this.listeners[event], fn];
     } else {
@@ -11,7 +17,7 @@ class EventEmitter {
     }
   }
 
-  emit(event) {
+  emit(event: string) {
     for (let item of this.listeners[event]) {
       item();
     }
