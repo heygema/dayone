@@ -1,4 +1,4 @@
-import compareObjects from '../compareObjects';
+import compareObjects from '../day1/compareObjects';
 
 let simon = {name: 'Simon', age: 34};
 let john = {name: 'John', age: 59};

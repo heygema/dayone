@@ -1,7 +1,7 @@
 // @flow
 /*eslint-disable no-unused-vars*/
 
-import counter from '../counter';
+import counter from '../day2/counter';
 
 it('should start at 0', () => {
   let c = counter();

@@ -1,4 +1,4 @@
-import checkPass from '../checkPassword';
+import checkPass from '../day3/checkPassword';
 
 it('should return false for all bad password', () => {
   expect(checkPass('bksd').success).toEqual(false);

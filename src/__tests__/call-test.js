@@ -1,4 +1,4 @@
-import createCallLogger from '../callLogger';
+import createCallLogger from '../day3/callLogger';
 
 it('test', () => {
   expect(true).toBe(true);
