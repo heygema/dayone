@@ -16,13 +16,13 @@ function filterArray<X>(
   return results;
 }
 
-let a = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3];
+// let a = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3];
 
-function not2(num) {
-  return num !== 2;
-}
+// function not2(num) {
+//   return num !== 2;
+// }
 
-console.log(filterArray(a, not2));
+// console.log(filterArray(a, not2));
 // console.log(res);
 
 // a.filter(x => x != 2);
