@@ -6,7 +6,7 @@ it('should expect the same thing', () => {
   expect(true).toBe(true);
   let numss = [1, 2, 9];
   let res1 = filterArray(numss, (thing) => thing !== 9);
-  let r = new RegExp('^((?!apple).)*$');
+  let notApple = new RegExp('^((?!apple).)*$');
   let arrOfFruits = [
     {
       name: 'banana',
@@ -22,7 +22,7 @@ it('should expect the same thing', () => {
     },
     {name: 'avocado apple', color: 'green'},
   ];
-  let res2 = filterArray(arrOfFruits, (fruit) => r.test(fruit['name']));
+  let res2 = filterArray(arrOfFruits, (fruit) => notApple.test(fruit['name']));
   expect(res1).toEqual([1, 2]);
   expect(res2).toEqual([
     {
