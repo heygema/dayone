@@ -1,7 +1,12 @@
 // @flow
 /*eslint-disable no-unused-vars */
 
-function filterArray<X>(array: Array<X>, fn: X => boolean): Array<X> {
+let defaultToTrue = (thing: mixed) => true;
+
+function filterArray<X>(
+  array: Array<X>,
+  fn: X => boolean = defaultToTrue
+): Array<X> {
   let results = [];
   for (let i of array) {
     if (fn(i)) {
