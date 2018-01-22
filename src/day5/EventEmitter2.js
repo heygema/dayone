@@ -5,6 +5,7 @@ type EventMap = Map<string, EventList>;
 // type Subscription = {
 //   remove: () => void,
 // };
+// type Id =
 
 class EventEmitter {
   events: EventMap = new Map();
