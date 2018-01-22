@@ -24,4 +24,12 @@ class EventEmitter {
   }
 }
 
+// class EventEmitter2 {
+//   listeners = new Map();
+
+//   addListener() {}
+
+//   emit() {}
+// }
+
 export default EventEmitter;
