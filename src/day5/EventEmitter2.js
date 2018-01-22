@@ -46,18 +46,10 @@ class EventEmitter {
   }
 
   removeListenerByID(id: string) {
-    // for (let key of this.events.keys()) {
-    //   //   this.events.get(key).delete(this.eventListenerData.get(id));
-    //   return key;
     let mustBeDeleted = this.eventListenerData.get(id);
-    // for (let funcs of this.events.keys()) {
-    //   this.events[funcs].delete(mustBeDeleted);
-    // }
     if (mustBeDeleted) {
       mustBeDeleted();
     }
-
-    // }d=is;this.eventL id=ne;Data.get(id);
   }
 
   emit(eventName: string) {
