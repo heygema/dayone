@@ -44,7 +44,7 @@ class EventEmitter {
     }
   }
 
-  removeListenerByID(id: number) {
+  removeListenerByID(id: string) {
     // for (let key of this.events.keys()) {
     //   //   this.events.get(key).delete(this.eventListenerData.get(id));
     //   return key;
