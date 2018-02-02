@@ -1,17 +1,17 @@
 /*eslint-disable no-unused-vars*/
 
-let people = [
-  {name: 'Simon', age: 34},
-  {name: 'John', age: 59},
-  {name: 'Gary', age: 93},
-];
+// let people = [
+//   {name: 'Simon', age: 34},
+//   {name: 'John', age: 59},
+//   {name: 'Gary', age: 93},
+// ];
 
-let pluck = (ar, propy) => {
-  return ar.map((x) => x[propy]);
-};
+// let pluck = (ar, propy) => {
+//   return ar.map((x) => x[propy]);
+// };
 
 // console.log(pluck(people, 'name'));
-export default pluck;
+// export default pluck;
 
 // let isArrayEqual = (a,b) => {
 //   let c = [...a, ...b];
