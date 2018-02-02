@@ -27,18 +27,6 @@ function* getUserRepos(userID: string) {
   //   return repos.map((repo) => repo.name);
 }
 
-function* generator2() {
-  yield 'haha this is useless';
-  yield 'just for testing';
-  return 'hahaha generator2 is terminated';
-}
-
-function wrap(genFunc) {
-  return (...args) => {
-    run(genFunc(...args));
-  };
-}
-
 export function actionTaker(action: Action) {
   switch (action.type) {
     case 'WAIT': {
@@ -55,26 +43,28 @@ export function actionTaker(action: Action) {
 }
 
 export function run(generatorFunc: Generator<any, any, any>) {
-  let iterator = generatorFunc;
-  let runGenerator = (aThing: any) => {
-    let a = iterator.next(aThing);
-    if (a.done) {
-      return a.value;
-    }
-    let somethingProducedByAction = actionTaker(a.value);
-    return runGenerator(somethingProducedByAction);
-  };
-  return runGenerator();
+  return new Promise((resolve) => {
+    let iterator = generatorFunc;
+    let runIterator = (input) => {
+      let a = iterator.next(input);
+      if (a.done) {
+        resolve(a.value);
+      }
+      switch (a.value.type) {
+        case 'WAIT': {
+          setTimeout(() => console.log('WAITING...'), a.value.ms);
+          break;
+        }
+        case 'FETCH': {
+          break;
+        }
+        default: {
+          break;
+        }
+      }
+    };
+  });
 }
 
 let promise: Promise<any> = run(getUserRepos('sstur'));
-
-let gen2 = run(generator2());
-
-console.log('generator2 returns', gen2);
-
-if (promise) {
-  promise.then((data) => {
-    console.log('the titles :', data.map((item) => item.name));
-  });
-}
+console.log('THE PROMISE YOU GOT MAN ', promise);
