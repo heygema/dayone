@@ -42,9 +42,8 @@ export function actionTaker(action: Action) {
   }
 }
 
-export function run(generatorFunc: Generator<any, any, any>) {
+export function run(iterator: Generator<any, any, any>) {
   return new Promise((resolve) => {
-    let iterator = generatorFunc;
     let runIterator = (input) => {
       let a = iterator.next(input);
       if (a.done) {
@@ -56,6 +55,12 @@ export function run(generatorFunc: Generator<any, any, any>) {
           break;
         }
         case 'FETCH': {
+          fetch('https://jsonplaceholder.typicode.com/posts/1')
+            .then((res) => res.json())
+            .then((data) => {
+              //do something with data
+              console.log(data);
+            });
           break;
         }
         default: {
